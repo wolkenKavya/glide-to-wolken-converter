@@ -75,44 +75,44 @@ export default function Home() {
   }, [status]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 flex justify-center items-center p-5">
-      <div className="bg-white rounded-3xl shadow-2xl p-12 w-full max-w-7xl min-h-[600px] backdrop-blur-sm border border-white/20">
+    <div className="h-screen bg-gradient-to-br from-blue-500 to-purple-600 flex justify-center items-start p-2 overflow-hidden">
+      <div className="bg-white rounded-3xl shadow-2xl p-4 w-full max-w-7xl backdrop-blur-sm border border-white/20 h-[calc(100vh-1rem)] flex flex-col">
         {/* Header */}
-        <div className="text-center mb-12 relative">
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent tracking-tight">
+        <div className="text-center mb-3 relative">
+          <h1 className="text-xl md:text-2xl font-bold mb-1 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent tracking-tight">
             ServiceNow Glide Script to Wolken JS Converter
           </h1>
-          <p className="text-gray-600 text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-600 text-sm max-w-2xl mx-auto leading-relaxed">
             Convert ServiceNow Glide Script to Wolken JS (Angular compatible)
           </p>
-          <div className="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded"></div>
+          <div className="absolute bottom-[-5px] left-1/2 transform -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded"></div>
         </div>
 
         {/* Filter Section */}
-        <div className="text-center mb-6 bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl border border-blue-100">
-          <div className="flex justify-center items-center gap-12 flex-wrap">
-            <div className="flex flex-row items-center gap-3">
-              <label className="text-lg font-semibold text-gray-700 whitespace-nowrap">
+        <div className="text-center mb-3 bg-gradient-to-r from-blue-50 to-purple-50 p-3 rounded-xl border border-blue-100">
+          <div className="flex justify-center items-center gap-4 flex-wrap">
+            <div className="flex flex-row items-center gap-2">
+              <label className="text-sm font-semibold text-gray-700 whitespace-nowrap">
                 Select Form Type
               </label>
               <select 
                 value={formType}
                 onChange={(e) => setFormType(e.target.value)}
-                className="border-2 border-gray-200 rounded-lg px-4 py-2 text-base bg-white min-w-[200px] cursor-pointer transition-all duration-300 font-medium shadow-sm focus:outline-none focus:border-blue-500 focus:shadow-lg focus:-translate-y-0.5 hover:border-blue-500 hover:-translate-y-0.5 hover:shadow-lg"
+                className="border-2 border-gray-200 rounded-lg px-2 py-1 text-xs bg-white min-w-[150px] cursor-pointer transition-all duration-300 font-medium shadow-sm focus:outline-none focus:border-blue-500 focus:shadow-lg focus:-translate-y-0.5 hover:border-blue-500 hover:-translate-y-0.5 hover:shadow-lg text-black"
               >
                 <option value="requestForm">Request Creation</option>
                 <option value="modifiedFields">Request Summary</option>
                 <option value="mainFormGroup">Task Summary</option>
               </select>
             </div>
-            <div className="flex flex-row items-center gap-3">
-              <label className="text-lg font-semibold text-gray-700 whitespace-nowrap">
+            <div className="flex flex-row items-center gap-2">
+              <label className="text-sm font-semibold text-gray-700 whitespace-nowrap">
                 Select Event Type
               </label>
               <select 
                 value={eventType}
                 onChange={(e) => setEventType(e.target.value)}
-                className="border-2 border-gray-200 rounded-lg px-4 py-2 text-base bg-white min-w-[200px] cursor-pointer transition-all duration-300 font-medium shadow-sm focus:outline-none focus:border-blue-500 focus:shadow-lg focus:-translate-y-0.5 hover:border-blue-500 hover:-translate-y-0.5 hover:shadow-lg"
+                className="border-2 border-gray-200 rounded-lg px-2 py-1 text-xs bg-white min-w-[150px] cursor-pointer transition-all duration-300 font-medium shadow-sm focus:outline-none focus:border-blue-500 focus:shadow-lg focus:-translate-y-0.5 hover:border-blue-500 hover:-translate-y-0.5 hover:shadow-lg text-black"
               >
                 <option value="onChange">onChange</option>
                 <option value="onLoad">onLoad</option>
@@ -127,11 +127,11 @@ export default function Home() {
         </div>
 
         {/* Converter Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-stretch mb-10 min-h-[600px]">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-1 items-stretch mb-3 flex-1">
           {/* Input Section */}
-          <div className="flex flex-col bg-gray-50 p-5 rounded-2xl border border-gray-100 transition-all duration-300 hover:bg-gray-100 hover:border-blue-200 hover:-translate-y-1 hover:shadow-xl">
-            <label className="font-bold text-gray-700 mb-4 text-lg flex items-center gap-3">
-              <div className="w-1 h-5 bg-gradient-to-b from-blue-500 to-purple-600 rounded"></div>
+          <div className="flex flex-col bg-gray-50 p-3 rounded-2xl border border-gray-100 transition-all duration-300 hover:bg-gray-100 hover:border-blue-200 hover:-translate-y-1 hover:shadow-xl">
+            <label className="font-bold text-gray-700 mb-1 text-sm flex items-center gap-2">
+              <div className="w-1 h-3 bg-gradient-to-b from-blue-500 to-purple-600 rounded"></div>
               ServiceNow Glide Script Input
             </label>
             <textarea 
@@ -139,7 +139,7 @@ export default function Home() {
               onChange={(e) => setInputData(e.target.value)}
               onDoubleClick={handleDoubleClick}
               placeholder="Enter your ServiceNow Glide Script here..."
-              className="border-2 border-gray-200 rounded-xl p-5 min-h-[500px] h-full w-full text-base leading-relaxed resize-none transition-all duration-300 bg-white font-mono shadow-inner focus:outline-none focus:border-blue-500 focus:shadow-lg focus:-translate-y-0.5 flex-1"
+              className="border-2 border-gray-200 rounded-xl p-3 text-xs leading-relaxed resize-none transition-all duration-300 bg-white font-mono shadow-inner focus:outline-none focus:border-blue-500 focus:shadow-lg focus:-translate-y-0.5 flex-1 text-black"
             />
           </div>
 
@@ -148,7 +148,7 @@ export default function Home() {
             <button 
               onClick={convertData}
               disabled={!inputData.trim() || isConverting}
-              className={`relative overflow-hidden rounded-full px-8 py-4 text-lg font-bold text-white transition-all duration-300 shadow-lg min-w-[120px] ${
+              className={`relative overflow-hidden rounded-full px-4 py-2 text-sm font-bold text-white transition-all duration-300 shadow-lg min-w-[80px] ${
                 !inputData.trim() || isConverting
                   ? 'bg-gray-400 cursor-not-allowed'
                   : 'bg-gradient-to-r from-blue-500 to-purple-600 hover:-translate-y-1 hover:shadow-xl active:-translate-y-0.5'
@@ -158,7 +158,7 @@ export default function Home() {
                 <>
                   <span className="opacity-0">Converting...</span>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                   </div>
                 </>
               ) : (
@@ -168,25 +168,25 @@ export default function Home() {
           </div>
 
           {/* Output Section */}
-          <div className="flex flex-col bg-gray-50 p-5 rounded-2xl border border-gray-100 transition-all duration-300 hover:bg-gray-100 hover:border-blue-200 hover:-translate-y-1 hover:shadow-xl">
-            <label className="font-bold text-gray-700 mb-4 text-lg flex items-center gap-3">
-              <div className="w-1 h-5 bg-gradient-to-b from-blue-500 to-purple-600 rounded"></div>
+          <div className="flex flex-col bg-gray-50 p-3 rounded-2xl border border-gray-100 transition-all duration-300 hover:bg-gray-100 hover:border-blue-200 hover:-translate-y-1 hover:shadow-xl">
+            <label className="font-bold text-gray-700 mb-1 text-sm flex items-center gap-2">
+              <div className="w-1 h-3 bg-gradient-to-b from-blue-500 to-purple-600 rounded"></div>
               Wolken JS Output
             </label>
             <textarea 
               value={outputData}
               readOnly
               placeholder="Converted Wolken JS will appear here..."
-              className="border-2 border-gray-200 rounded-xl p-5 min-h-[500px] h-full w-full text-base leading-relaxed resize-none bg-white font-mono shadow-inner flex-1"
+              className="border-2 border-gray-200 rounded-xl p-3 text-xs leading-relaxed resize-none bg-white font-mono shadow-inner flex-1 text-black"
             />
           </div>
         </div>
 
         {/* Controls */}
-        <div className="flex justify-center gap-5 mb-10 p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl border border-blue-100">
+        <div className="flex justify-center gap-1 mb-1 p-1 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl border border-blue-100">
           <button 
             onClick={clearAll}
-            className="bg-gradient-to-r from-gray-500 to-gray-600 text-white border-none rounded-full px-8 py-4 text-lg font-semibold cursor-pointer transition-all duration-300 shadow-lg hover:from-gray-600 hover:to-gray-700 hover:-translate-y-1 hover:shadow-xl"
+            className="bg-gradient-to-r from-gray-500 to-gray-600 text-white border-none rounded-full px-2 py-1 text-xs font-semibold cursor-pointer transition-all duration-300 shadow-lg hover:from-gray-600 hover:to-gray-700 hover:-translate-y-1 hover:shadow-xl"
           >
             Clear All
           </button>
@@ -194,7 +194,7 @@ export default function Home() {
 
         {/* Status */}
         {status && (
-          <div className={`text-center mt-8 p-4 rounded-xl font-semibold text-lg shadow-lg animate-in slide-in-from-top-2 duration-300 ${
+          <div className={`text-center mt-2 p-2 rounded-xl font-semibold text-xs shadow-lg animate-in slide-in-from-top-2 duration-300 ${
             status.type === 'success' 
               ? 'bg-gradient-to-r from-green-100 to-green-200 text-green-800 border border-green-300'
               : status.type === 'error'

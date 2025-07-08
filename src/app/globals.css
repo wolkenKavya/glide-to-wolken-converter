@@ -24,3 +24,15 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Ensure text areas have black text color */
+textarea {
+  color: #000000 !important;
+}
+
+/* Ensure text areas have black text color even in dark mode */
+@media (prefers-color-scheme: dark) {
+  textarea {
+    color: #000000 !important;
+  }
+}
